@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 
 Project("{501AB940-1CDA-B5BE-91CE-713CD463E901}") = "TowerPower", "Assembly-CSharp-firstpass.csproj", "{FD4DF5D7-F432-289A-51A9-843ECD3B42D3}"
 EndProject
+Project("{501AB940-1CDA-B5BE-91CE-713CD463E901}") = "TowerPower", "Assembly-CSharp.csproj", "{02A2E550-76E8-4AEB-8180-F0DD82ABEC7E}"
+EndProject
 Project("{501AB940-1CDA-B5BE-91CE-713CD463E901}") = "TowerPower", "Assembly-CSharp-Editor.csproj", "{334955F0-C4EB-1A72-85A9-D37943995E5F}"
 EndProject
 Global
@@ -15,6 +17,10 @@ Global
 		{FD4DF5D7-F432-289A-51A9-843ECD3B42D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FD4DF5D7-F432-289A-51A9-843ECD3B42D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FD4DF5D7-F432-289A-51A9-843ECD3B42D3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{02A2E550-76E8-4AEB-8180-F0DD82ABEC7E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{02A2E550-76E8-4AEB-8180-F0DD82ABEC7E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{02A2E550-76E8-4AEB-8180-F0DD82ABEC7E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{02A2E550-76E8-4AEB-8180-F0DD82ABEC7E}.Release|Any CPU.Build.0 = Release|Any CPU
 		{334955F0-C4EB-1A72-85A9-D37943995E5F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{334955F0-C4EB-1A72-85A9-D37943995E5F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{334955F0-C4EB-1A72-85A9-D37943995E5F}.Release|Any CPU.ActiveCfg = Release|Any CPU
