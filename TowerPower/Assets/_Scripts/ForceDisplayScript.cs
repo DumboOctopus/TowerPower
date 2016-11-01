@@ -3,10 +3,13 @@ using System.Collections;
 
 public class ForceDisplayScript : MonoBehaviour {
 
+	// the joint of the tower
 	public FixedJoint2D joint;
+	// the member of the tower
 	public Rigidbody2D thisrigidbody;
 	//Transform before simulating
 	private Transform initialTransform;
+	// if the tower is simulating
 	private bool b_simulating = false;
 
 
