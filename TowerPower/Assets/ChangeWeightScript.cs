@@ -4,8 +4,11 @@ using UnityEngine.UI;
 
 public class ChangeWeightScript : MonoBehaviour {
 
+	// the weight of the object
 	public Rigidbody2D weight;
+	//slider that controls the weight
 	private Slider slider;
+	//the maximum
 	public float scaler = 15;
 
 	// Use this for initialization
@@ -18,7 +21,7 @@ public class ChangeWeightScript : MonoBehaviour {
 	void Update () {
 	
 	}
-
+	//calculates the mass of the member
 	void onResponse(float f)
 	{
 		weight.mass = scaler * slider.value;
