@@ -32,16 +32,15 @@ public class SimulateButtonScript : MonoBehaviour {
 		GameObject max = allSegments [0].gameObject; //errors if no segments
 
 		for (int i = 0; i < allSegments.Length; i++) {
-			
-			if (getHighestY(max) < getHighestY (allSegments [i].gameObject)) {
-				max = allSegments [i].gameObject;
-			}
-		
-
-
 			allSegments [i].b_simulating = !allSegments [i].b_simulating;
 		}
 
+		for (int i = 0; i < allSegments.Length; i++) {
+
+			if (getHighestY (max) < getHighestY (allSegments [i].gameObject)) {
+				max = allSegments [i].gameObject;
+			}
+		}
 		Debug.Log (max);
 
 		//create weight yeah;

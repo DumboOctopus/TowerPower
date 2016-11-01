@@ -80,7 +80,7 @@ public class SegmentPlacingScript : MonoBehaviour {
 
 
 			for (int i = 0; i < allSegments.Length; i++) {
-				if (allSegments [i].connectedBody.Equals (this.gameObject)) {
+				if (allSegments [i].connectedBody != null && allSegments [i].connectedBody.Equals (this.gameObject)) {
 					Destroy (allSegments [i]);
 				}
 			
