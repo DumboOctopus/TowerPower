@@ -18,7 +18,7 @@ public class SimulationScript : MonoBehaviour {
 		if (b_simulating) {
 			if (!b_initedSimulation) {
 				originalTransform = this.transform;
-				GetComponent<Rigidbody2D> ().isKinematic = true;
+				GetComponent<Rigidbody2D> ().isKinematic = false;
 				b_initedSimulation = true;
 			}
 
@@ -30,7 +30,7 @@ public class SimulationScript : MonoBehaviour {
 					this.transform.localScale = originalTransform.localScale;
 				}
 
-				GetComponent<Rigidbody2D> ().isKinematic = false;
+				GetComponent<Rigidbody2D> ().isKinematic = true;
 				b_initedSimulation = false;
 			}
 		

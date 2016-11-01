@@ -34,6 +34,10 @@ public class SimulateButtonScript : MonoBehaviour {
 		for (int i = 0; i < allSegments.Length; i++) {
 			allSegments [i].b_simulating = !allSegments [i].b_simulating;
 		}
+		if (allSegments [0].b_simulating)
+			weight.transform.position = new Vector3 (2, 2, 0);
+		else
+			weight.transform.position = new Vector3 (-5, 2, 0);
 
 		for (int i = 0; i < allSegments.Length; i++) {
 
