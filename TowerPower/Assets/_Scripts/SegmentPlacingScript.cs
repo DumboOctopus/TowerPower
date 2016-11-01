@@ -10,6 +10,8 @@ public class SegmentPlacingScript : MonoBehaviour {
 	private GameObject segment = null;
 	public bool isAddingMode = true;
 
+	public LayerMask rayCastMask;
+
 
 	// Use this for initialization
 	void Start () {
@@ -74,6 +76,15 @@ public class SegmentPlacingScript : MonoBehaviour {
 	void OnMouseDown()
 	{
 		if (!isAddingMode) {
+			FixedJoint2D[] allSegments = FindObjectsOfType<FixedJoint2D> ();
+
+
+			for (int i = 0; i < allSegments.Length; i++) {
+				if (allSegments [i].connectedBody.Equals (this.gameObject)) {
+					Destroy (allSegments [i]);
+				}
+			
+			}
 			Destroy (this.gameObject);
 			return;
 		}
@@ -93,9 +104,32 @@ public class SegmentPlacingScript : MonoBehaviour {
 	void OnMouseUp(){
 		if (!isAddingMode)
 			return;
+
+
 		draging = false;
+
+		//fix it to the other one
 		FixedJoint2D j = segment.GetComponent<FixedJoint2D> ();
 		j.connectedBody = this.GetComponent<Rigidbody2D> ();
+
+
+		//=========BROKEN===========//
+//
+//		//fix it to what it landed on
+//		RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero, 100, rayCastMask);
+//
+//		if(hit.collider != null)
+//		{
+//			
+//			if(hit.collider.gameObject.tag.Equals("draggable") && !hit.collider.gameObject.Equals(segment))
+//			{
+//				Debug.Log (hit.collider.gameObject.name);
+//				FixedJoint2D segementsNew = segment.AddComponent<FixedJoint2D> ();
+//				segementsNew.connectedBody = hit.collider.gameObject.GetComponent<Rigidbody2D>();
+//			}
+//		}
+//
+//		segment.layer = 0;
 	}
 
 }
