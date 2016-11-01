@@ -4,8 +4,11 @@ using UnityEngine.UI;
 
 public class SimulateButtonScript : MonoBehaviour {
 
+	// the weight of the member
 	public GameObject weight;
+	// the button that switches mode
 	public Button btn;
+	// array that holds all the segments
 	public SimulationScript[] allSegments;
 
 	// Use this for initialization
@@ -19,7 +22,7 @@ public class SimulateButtonScript : MonoBehaviour {
 	void Update () {
 		
 	}
-
+	// when the button is pressed, it moves the block and notifies all objects that simulation has begun
 	void TaskOnListener(){
 		
 		allSegments = FindObjectsOfType<SimulationScript> ();
@@ -51,7 +54,7 @@ public class SimulateButtonScript : MonoBehaviour {
 
 	}
 
-
+	// returns the height of the object
 	double getHighestY(GameObject obj)
 	{
 		float angle =  obj.transform.eulerAngles.z;
