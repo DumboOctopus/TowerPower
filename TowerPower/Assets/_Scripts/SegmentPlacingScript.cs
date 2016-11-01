@@ -11,11 +11,11 @@ public class SegmentPlacingScript : MonoBehaviour {
 	public bool isAddingMode = true;
 
 	public LayerMask rayCastMask;
-
+	public ChangeWoodScript woodScript;
 
 	// Use this for initialization
 	void Start () {
-		
+		woodScript = FindObjectOfType<ChangeWoodScript> ();
 	}
 	
 	// Update is called once per frame
@@ -60,7 +60,7 @@ public class SegmentPlacingScript : MonoBehaviour {
 				new Vector2(mousePositionOnWord.x, mousePositionOnWord.y),
 				new Vector2 (startDragPosition.x, startDragPosition.y)
 			)*0.2f + 0.03f,
-			segment.transform.localScale.y,
+			0.5f*woodScript.woodThickness,
 			segment.transform.localScale.z
 		);
 

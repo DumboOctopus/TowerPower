@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class ChangeWoodScript : MonoBehaviour {
 
-	public double woodThickness;
+	public float woodThickness;
 	private Button btn;
 	private Text txt;
 
@@ -13,7 +13,7 @@ public class ChangeWoodScript : MonoBehaviour {
 		btn = GetComponent<Button> ();
 		txt = GetComponentInChildren<Text> ();
 		btn.onClick.AddListener (TaskOnListener);
-		woodThickness = 0.125;
+		woodThickness = 0.125f;
 	}
 	
 	// Update is called once per frame
