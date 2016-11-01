@@ -3,8 +3,11 @@ using System.Collections;
 
 public class SimulationScript : MonoBehaviour {
 
+	// whether the app is simulating
 	public bool b_simulating = false;
+	// whether simulation has been initiliazed
 	public bool b_initedSimulation = false;
+	// the original tower before the simulation
 	private Transform originalTransform;
 
 
