@@ -7,8 +7,9 @@ public class SimulationScript : MonoBehaviour {
 	public bool b_simulating = false;
 	// whether simulation has been initiliazed
 	public bool b_initedSimulation = false;
-	// the original tower before the simulation
-	private Transform originalTransform;
+	// the original position before the simulation
+	private Vector3 originalPosition;
+	private Vector3 originalEulerAngles;
 
 
 	// Use this for initialization
@@ -20,20 +21,32 @@ public class SimulationScript : MonoBehaviour {
 	void Update () {
 		if (b_simulating) {
 			if (!b_initedSimulation) {
-				originalTransform = this.transform;
+				originalPosition = new Vector3 (
+					this.transform.position.x,
+					this.transform.position.y,
+					this.transform.position.z
+				);
+
+				originalEulerAngles = new Vector3 (
+					this.transform.eulerAngles.x,
+					this.transform.eulerAngles.y,
+					this.transform.eulerAngles.z
+				);
+					
+
 				GetComponent<Rigidbody2D> ().isKinematic = false;
 				b_initedSimulation = true;
 			}
 
 		} else {
 			if (b_initedSimulation) {
-				if (originalTransform != null) {
-					this.transform.position = originalTransform.position;
-					this.transform.eulerAngles = originalTransform.eulerAngles;
-					this.transform.localScale = originalTransform.localScale;
+				GetComponent<Rigidbody2D> ().isKinematic = true;
+				if (originalEulerAngles != null) {
+					this.transform.position = originalPosition;
+					this.transform.eulerAngles = originalEulerAngles;
 				}
 
-				GetComponent<Rigidbody2D> ().isKinematic = true;
+
 				b_initedSimulation = false;
 			}
 		
