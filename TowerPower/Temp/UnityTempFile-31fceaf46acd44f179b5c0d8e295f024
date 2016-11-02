@@ -88,7 +88,6 @@
 'Assets/_Scripts/ChangeWoodScript.cs'
 'Assets/_Scripts/DeleteButtonScript.cs'
 'Assets/_Scripts/DragByMouseScript.cs'
-'Assets/_Scripts/ForceDisplayScript.cs'
 'Assets/_Scripts/SegmentPlacingScript.cs'
 'Assets/_Scripts/SimulateButtonScript.cs'
 'Assets/_Scripts/SimulationScript.cs'

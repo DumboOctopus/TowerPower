@@ -4,8 +4,6 @@ using UnityEngine.UI;
 
 public class DeleteButtonScript : MonoBehaviour {
 
-	// the weight of the tower
-	public GameObject weight;
 	// the button that switches between delete mode and adding mode
 	public Button btn;
 	// an array that holds all the segments of the tower

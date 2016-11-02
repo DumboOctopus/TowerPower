@@ -13,8 +13,6 @@ public class SegmentPlacingScript : MonoBehaviour {
 	private GameObject segment = null;
 	// whether the app is in adding mode
 	public bool isAddingMode = true;
-	// which layers should be detected
-	public LayerMask rayCastMask;
 	// reference to script that controls wood size
 	public ChangeWoodScript woodScript;
 
@@ -65,7 +63,7 @@ public class SegmentPlacingScript : MonoBehaviour {
 				new Vector2(mousePositionOnWord.x, mousePositionOnWord.y),
 				new Vector2 (startDragPosition.x, startDragPosition.y)
 			)*0.2f + 0.03f,
-			0.5f*(woodScript.isOneEighth?0.125f:1/16f),
+			0.5f*woodScript.woodWidth(),
 			segment.transform.localScale.z
 		);
 

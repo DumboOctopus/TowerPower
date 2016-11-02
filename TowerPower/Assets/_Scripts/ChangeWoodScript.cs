@@ -32,4 +32,10 @@ public class ChangeWoodScript : MonoBehaviour {
 		}
 		
 	}
+
+	public double woodWidth(){
+		if (isOneEighth)
+			return 1 / 8f;
+		return 1 / 16f;
+	}
 }
