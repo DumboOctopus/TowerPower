@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class ChangeWoodScript : MonoBehaviour {
 
 	// the thickness of the member
-	public float woodThickness;
+	public bool isOneEighth = true;
 	// the button that changes the wood
 	private Button btn;
 	// the text on the button
@@ -16,7 +16,6 @@ public class ChangeWoodScript : MonoBehaviour {
 		btn = GetComponent<Button> ();
 		txt = GetComponentInChildren<Text> ();
 		btn.onClick.AddListener (TaskOnListener);
-		woodThickness = 0.125f;
 	}
 	
 	// Update is called once per frame
@@ -25,12 +24,11 @@ public class ChangeWoodScript : MonoBehaviour {
 	}
 	// sets text to the type of wood
 	public void TaskOnListener(){
-		if (woodThickness == 0.125) {
-			woodThickness = 1 / 16f;
-			txt.text = "Wood (1/16)";
-		} else {
-			woodThickness = 0.125f;
+		isOneEighth = !isOneEighth;
+		if (isOneEighth) {
 			txt.text = "Wood (1/8)";
+		} else {
+			txt.text = "Wood (1/16)";
 		}
 		
 	}

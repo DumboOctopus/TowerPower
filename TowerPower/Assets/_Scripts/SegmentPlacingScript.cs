@@ -65,7 +65,7 @@ public class SegmentPlacingScript : MonoBehaviour {
 				new Vector2(mousePositionOnWord.x, mousePositionOnWord.y),
 				new Vector2 (startDragPosition.x, startDragPosition.y)
 			)*0.2f + 0.03f,
-			0.5f*woodScript.woodThickness,
+			0.5f*(woodScript.isOneEighth?0.125f:1/16f),
 			segment.transform.localScale.z
 		);
 
@@ -117,6 +117,14 @@ public class SegmentPlacingScript : MonoBehaviour {
 		//fix it to the other one
 		FixedJoint2D j = segment.GetComponent<FixedJoint2D> ();
 		j.connectedBody = this.GetComponent<Rigidbody2D> ();
+
+		if (woodScript.isOneEighth) {
+			j.breakForce = 100f;
+			j.breakTorque = 50f;
+		} else {
+			j.breakForce = 40f;
+			j.breakTorque = 10;
+		}
 
 
 		//=========BROKEN===========//
