@@ -31,7 +31,6 @@ public class SimulateButtonScript : MonoBehaviour {
 
 
 
-		//========BROKEN :(===========//
 		GameObject max = allSegments [0].gameObject; //errors if no segments
 
 		for (int i = 0; i < allSegments.Length; i++) {
@@ -49,8 +48,6 @@ public class SimulateButtonScript : MonoBehaviour {
 			}
 		}
 		Debug.Log (max);
-
-		//create weight yeah;
 
 	}
 

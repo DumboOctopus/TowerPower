@@ -3,7 +3,6 @@ using System.Collections;
 using UnityEngine.UI;
 
 public class ChangeWoodScript : MonoBehaviour {
-
 	// the thickness of the member
 	public bool isOneEighth = true;
 	// the button that changes the wood
@@ -30,10 +29,10 @@ public class ChangeWoodScript : MonoBehaviour {
 		} else {
 			txt.text = "Wood (1/16)";
 		}
-		
+
 	}
 
-	public double woodWidth(){
+	public float woodWidth(){
 		if (isOneEighth)
 			return 1 / 8f;
 		return 1 / 16f;
