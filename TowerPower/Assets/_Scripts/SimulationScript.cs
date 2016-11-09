@@ -41,10 +41,10 @@ public class SimulationScript : MonoBehaviour {
 		} else {
 			if (b_initedSimulation) {
 				GetComponent<Rigidbody2D> ().isKinematic = true;
-				if (originalEulerAngles != null) {
-					this.transform.position = originalPosition;
-					this.transform.eulerAngles = originalEulerAngles;
-				}
+
+				this.transform.position = originalPosition;
+				this.transform.eulerAngles = originalEulerAngles;
+
 
 
 				b_initedSimulation = false;

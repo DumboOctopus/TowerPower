@@ -16,9 +16,12 @@ public class SegmentPlacingScript : MonoBehaviour {
 	// reference to script that controls wood size
 	public ChangeWoodScript woodScript;
 
+	public static UndoScript undoScript;
+
 	// Use this for initialization
 	void Start () {
 		woodScript = FindObjectOfType<ChangeWoodScript> ();
+		undoScript = Camera.main.GetComponent<UndoScript> ();
 	}
 	
 	// Update is called once per frame
@@ -88,6 +91,8 @@ public class SegmentPlacingScript : MonoBehaviour {
 				}
 			
 			}
+				
+			undoScript.removedSegment (this.gameObject);
 			Destroy (this.gameObject);
 			return;
 		}
@@ -124,6 +129,7 @@ public class SegmentPlacingScript : MonoBehaviour {
 			j.breakTorque = 10;
 		}
 
+		undoScript.addedSegment (segment);
 
 		//=========BROKEN===========//
 //
